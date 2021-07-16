@@ -19,7 +19,7 @@ require (
 	github.com/hashicorp/golang-lru v0.5.4
 	github.com/json-iterator/go v1.1.11
 	github.com/klauspost/compress v1.13.1
-	github.com/lucas-clemente/quic-go v0.21.1
+	github.com/lucas-clemente/quic-go v0.21.2
 	github.com/megaease/easemesh-api v0.0.0-20210604095307-27c2d1f7cf09
 	github.com/megaease/grace v1.0.0
 	github.com/megaease/jsonschema v0.0.0-20191230042224-e92108cfafc5
