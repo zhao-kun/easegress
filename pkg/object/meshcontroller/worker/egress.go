@@ -219,8 +219,11 @@ func (egs *EgressServer) reloadHTTPServer(specs map[string]*spec.Service) bool {
 			},
 		}
 
-		// for matching only host name request, need to matching by host name with regexp
+		// for matching only host name request
+		//   1) try exactly matching
+		//   2) try matching with regexp
 		ruleHost := &httpserver.Rule{
+			Host:       serviceName,
 			HostRegexp: egs.buildHostRegex(serviceName),
 			Paths: []*httpserver.Path{
 				{
