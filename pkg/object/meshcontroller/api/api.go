@@ -74,6 +74,9 @@ const (
 
 	// MeshServiceInstancePath is the mesh service path.
 	MeshServiceInstancePath = "/mesh/serviceinstances/{serviceName}/{instanceID}"
+
+	//MeshGlobalCanaryPath is the mesh service path
+	MeshGlobalCanaryPath = "/mesh/canary-headers"
 )
 
 type (
@@ -156,6 +159,9 @@ func (a *API) registerAPIs() {
 			{Path: MeshServiceMetricsPath, Method: "GET", Handler: a.getPartOfService(metricsMeta)},
 			{Path: MeshServiceMetricsPath, Method: "PUT", Handler: a.updatePartOfService(metricsMeta)},
 			{Path: MeshServiceMetricsPath, Method: "DELETE", Handler: a.deletePartOfService(metricsMeta)},
+
+			{Path: MeshGlobalCanaryPath, Method: "GET", Handler: a.getGlobalCanaryHeaders(outputServerMeta)},
+			{Path: MeshGlobalCanaryPath, Method: "PUT", Handler: a.putGlobalCanaryHeaders},
 		},
 	}
 
